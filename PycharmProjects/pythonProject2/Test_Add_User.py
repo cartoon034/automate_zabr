@@ -109,7 +109,7 @@ if __name__ == '__main__':
             Ok = browser.find_element(By.XPATH, '/html/body/div[2]/div/div[6]/button[1]')
             Ok.click()
 
-            print('[{}] create user successful!'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+            print('[{}] create user successful !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
         except:
             print('[{}] create user false !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
@@ -122,7 +122,7 @@ if __name__ == '__main__':
 
         login = browser.find_element(By.XPATH, '/html/body/div/div/div/div[1]/div[1]/div/div/div[2]/div/button[1]').click()
 
-        print('[{}] login user!'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+        print('[{}] login user !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
         username = browser.find_element(By.ID, 'login-phone')
         username.send_keys('1012000000')
@@ -142,13 +142,15 @@ if __name__ == '__main__':
 
             profile2 = browser.find_element(By.XPATH, '/html/body/div/div/div/div[1]/div[1]/div/div/div[2]/div/div/div[2]/div[7]/button').click()
 
-            print('[{}] login user successful!'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+            print('[{}] login user successful !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
         except:
             print('[{}] login user false !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
 
         time.sleep(3)
+
+        print('[{}] User create deposit !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
         deposit = browser.find_element(By.XPATH, '/html/body/div/div/div/div[1]/div[1]/div[1]/div/div[2]/div/div/div[2]/div[2]/button/span').click()
 
@@ -168,10 +170,10 @@ if __name__ == '__main__':
 
             cancel = browser.find_element(By.XPATH, '/html/body/div/div/div/div[1]/div[3]/div/div/div[3]/div/div[7]/button').click()
 
-            print('[{}] deposit successful!'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+            print('[{}] User cancel deposit successful !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
         except:
-            print('[{}] deposit false !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+            print('[{}] User cancel deposit false !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
         time.sleep(2)
 
@@ -183,7 +185,7 @@ if __name__ == '__main__':
 
         time.sleep(5)
 
-        print('[{}] logout !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+        print('[{}] logout User !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
         browser.get('https://s-u-p.zabtech.xyz/')
 
@@ -203,7 +205,7 @@ if __name__ == '__main__':
         Search.send_keys('1012000000')
         Search.submit()
 
-        print("[{}] Search !".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+        print("[{}] Search User !".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
         time.sleep(1)
 
@@ -223,13 +225,13 @@ if __name__ == '__main__':
         First_name_clear.clear()
 
         First_name = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/form/div[1]/div[3]/div[2]/input')
-        First_name.send_keys('ทดสอบ')
+        First_name.send_keys('ชื่อทดสอบ')
 
         Last_name_clear = browser.find_element(By.XPATH,'/html/body/div[2]/div[1]/div/div/div/form/div[1]/div[4]/div[2]/input')
         Last_name_clear.send_keys(Keys.CONTROL + "a")
 
         Last_name = browser.find_element(By.XPATH,'/html/body/div[2]/div[1]/div/div/div/form/div[1]/div[4]/div[2]/input')
-        Last_name.send_keys('ทดสอบ')
+        Last_name.send_keys('นามสกุนทดสอบ')
 
         User_group = browser.find_element(By.XPATH,'/html/body/div[2]/div[1]/div/div/div/form/div[1]/div[5]/div[2]/div/div[2]').click()
 
@@ -243,8 +245,11 @@ if __name__ == '__main__':
 
         Commission_Group2 = browser.find_element(By.XPATH,'/html/body/div[2]/div[1]/div/div/div/form/div[1]/div[7]/div[2]/div/div[3]/ul/li[2]').click()
 
-        Remark = browser.find_element(By.XPATH,'/html/body/div[2]/div[1]/div/div/div/form/div[1]/div[8]/div[2]/div/textarea')
-        Remark.send_keys('ทดสอบ')
+        Remark1 = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/form/div[1]/div[8]/div[2]/div/textarea')
+        Remark1.send_keys(Keys.CONTROL + "a")
+
+        Remark2 = browser.find_element(By.XPATH,'/html/body/div[2]/div[1]/div/div/div/form/div[1]/div[8]/div[2]/div/textarea')
+        Remark2.send_keys('ทดสอบแก้ไขผู้ใช้')
 
         Save = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/form/div[2]/button[1]').click()
 
@@ -255,7 +260,7 @@ if __name__ == '__main__':
             Ok = browser.find_element(By.XPATH, '/html/body/div[2]/div/div[6]/button[1]')
             Ok.click()
 
-            print('[{}] Edit user successful!'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+            print('[{}] Edit user successful !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
         except:
             print('[{}] Edit user false !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
@@ -289,7 +294,7 @@ if __name__ == '__main__':
             Ok = browser.find_element(By.XPATH, '/html/body/div[2]/div/div[6]/button[1]')
             Ok.click()
 
-            print('[{}] password successful!'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+            print('[{}] password successful !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
         except:
             print('[{}] password false !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
@@ -322,7 +327,7 @@ if __name__ == '__main__':
 
             profile2 = browser.find_element(By.XPATH, '/html/body/div/div/div/div[1]/div[1]/div/div/div[2]/div/div/div[2]/div[7]/button').click()
 
-            print('[{}] login password successful!'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+            print('[{}] login password successful !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
         except:
 
@@ -352,7 +357,7 @@ if __name__ == '__main__':
 
             profile1 = browser.find_element(By.XPATH, '/html/body/div/div/div/div[1]/div[1]/div/div/div[2]/div/div/div[2]/div[7]/button').click()
 
-            print('[{}] login password successful!'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+            print('[{}] login password successful !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
         except:
 
@@ -362,7 +367,7 @@ if __name__ == '__main__':
 
         time.sleep(5)
 
-        print('[{}] logout !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+        print('[{}] logout User !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
         browser.get('https://s-u-p.zabtech.xyz/')
 
@@ -382,7 +387,7 @@ if __name__ == '__main__':
         Search.send_keys('1012000000')
         Search.submit()
 
-        print("[{}] Search !".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+        print("[{}] Search User !".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
         time.sleep(1)
 
@@ -409,7 +414,7 @@ if __name__ == '__main__':
         Account_name.clear()
 
         Account_name = browser.find_element(By.XPATH,'/html/body/div[2]/div[1]/div/div/div/form/div[1]/div[2]/div/div/input')
-        Account_name.send_keys('นารา มาสาย')
+        Account_name.send_keys('ทดสอบ นะนะ')
 
         time.sleep(2)
 
@@ -432,12 +437,91 @@ if __name__ == '__main__':
 
             time.sleep(2)
 
-            print('[{}] Edit bank successful!'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+            print('[{}] Edit bank successful !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
         except:
             print('[{}] Edit bank false !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
+        Edit_user = browser.find_element(By.XPATH, '/html/body/div/div/div/div/div[2]/div/div/div/div[3]/div/div[3]/div/table/tbody/tr/td[10]/div/button')
+        browser.execute_script("arguments[0].click();", Edit_user)
 
+        time.sleep(2)
+
+        print("[{}] Edit partner !".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        Edit_partner = browser.find_element(By.XPATH, '/html/body/div/div/div/div/div[2]/div/div/div/div[3]/div/div[3]/div/table/tbody/tr/td[10]/div/ul/li[4]/a/div')
+        browser.execute_script("arguments[0].click();", Edit_partner)
+
+        Edit_partner2 = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/form/div[1]/div[1]/div/div/div[2]/div[2]')
+        browser.execute_script("arguments[0].click();", Edit_partner2)
+
+        Edit_partner3 = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/form/div[1]/div[1]/div/div/div[2]/div[3]/ul/li[2]')
+        browser.execute_script("arguments[0].click();", Edit_partner3)
+
+        Edit_Remark = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/form/div[1]/div[2]/div/input')
+        Edit_Remark.send_keys('ทดสอบผูกพันธมิตร')
+
+        Save_Edit = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/form/div[2]/button[1]')
+        browser.execute_script("arguments[0].click();", Save_Edit)
+
+        try:
+
+            time.sleep(1)
+
+            Close = browser.find_element(By.XPATH, '/html/body/div[2]/div/div[6]/button[1]')
+            browser.execute_script("arguments[0].click();", Close)
+
+            time.sleep(2)
+
+            print('[{}] Edit partner successful !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        except:
+            print('[{}] Edit partner false !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        Edit_user = browser.find_element(By.XPATH, '/html/body/div/div/div/div/div[2]/div/div/div/div[3]/div/div[3]/div/table/tbody/tr/td[10]/div/button')
+        browser.execute_script("arguments[0].click();", Edit_user)
+
+        time.sleep(2)
+
+        print("[{}] Adjust credit !".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        Adjust_credit = browser.find_element(By.XPATH, '/html/body/div/div/div/div/div[2]/div/div/div/div[3]/div/div[3]/div/table/tbody/tr/td[10]/div/ul/li[5]/a')
+        browser.execute_script("arguments[0].click();", Adjust_credit)
+
+        username = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/form/div[1]/div[1]/div/div/input')
+        username.send_keys(Keys.CONTROL + "a")
+
+        time.sleep(1)
+
+        credit = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/form/div[1]/div[1]/div/div/input')
+        credit.send_keys(randint(1, 10000))
+
+        time.sleep(1)
+
+        credit_Remark = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/form/div[1]/div[4]/div/div/input')
+        credit_Remark.send_keys('ทดสอบเพิ่มเครดิต')
+
+        time.sleep(1)
+
+        Reviewing = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/form/div[1]/div[5]/div/div/input')
+        Reviewing.click()
+
+        Save = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/form/div[2]/button[1]')
+        browser.execute_script("arguments[0].click();", Save)
+
+        try:
+
+            time.sleep(1)
+
+            Close = browser.find_element(By.XPATH, '/html/body/div[2]/div/div[6]/button[1]')
+            browser.execute_script("arguments[0].click();", Close)
+
+            time.sleep(2)
+
+            print('[{}] Adjust credit successful !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        except:
+            print('[{}] Adjust credit false !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
         time.sleep(10000)
 
@@ -446,6 +530,6 @@ if __name__ == '__main__':
         print("[{}] browser close !".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
     except KeyboardInterrupt:
-        print("[{}] Process exit!".format((datetime.datetime.now() - datetime.timedelta(seconds=60)).strftime("%Y-%m-%d %H:%M:%S")))
+        print("[{}] Process exit !".format((datetime.datetime.now() - datetime.timedelta(seconds=60)).strftime("%Y-%m-%d %H:%M:%S")))
         browser.close()
         sys.exit(0)
