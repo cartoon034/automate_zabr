@@ -36,181 +36,340 @@ if __name__ == '__main__':
 
         print("[{}] Login !".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
-        time.sleep(3)
-
-        menu_user = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[1]/div[2]/div[1]/div[2]/div/div/div/div/ul/li[2]/a/span')
-        browser.execute_script("arguments[0].click();", menu_user)
-
         time.sleep(1)
 
-        menu_user2 = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[1]/div[2]/div[1]/div[2]/div/div/div/div/ul/li[2]/ul/li[1]/a')
-        browser.execute_script("arguments[0].click();", menu_user2)
-
-        print("[{}] Click Menu Users !".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
-
-        time.sleep(1)
-
-        Add_user = browser.find_element(By.XPATH, '//*[@id="layout-wrapper"]/div[2]/div/div/div/div[3]/div/div[1]/div/button')
-        browser.execute_script("arguments[0].click();", Add_user)
-
-        Phone_number = browser.find_element(By.XPATH,'//*[@id="modal-UsersInfo___BV_modal_body_"]/form/div[1]/div[1]/div[2]/input')
-        Phone_number.send_keys('1900000000')
-
-        First_name = browser.find_element(By.XPATH,'//*[@id="modal-UsersInfo___BV_modal_body_"]/form/div[1]/div[2]/div[2]/input')
-        First_name.send_keys('test the')
-
-        Last_name = browser.find_element(By.XPATH,'//*[@id="modal-UsersInfo___BV_modal_body_"]/form/div[1]/div[3]/div[2]/input')
-        Last_name.send_keys('system')
-
-        User_group1 = browser.find_element(By.XPATH, '//*[@id="modal-UsersInfo___BV_modal_body_"]/form/div[1]/div[4]/div[2]/div/div[2]').click()
-
-        User_group2 = browser.find_element(By.XPATH, '//*[@id="modal-UsersInfo___BV_modal_body_"]/form/div[1]/div[4]/div[2]/div/div[3]/ul/li[10]').click()
-
-        Affiliate_Group1 = browser.find_element(By.XPATH, '//*[@id="modal-UsersInfo___BV_modal_body_"]/form/div[1]/div[5]/div[2]/div/div[1]').click()
-
-        Affiliate_Group2 = browser.find_element(By.XPATH, '//*[@id="modal-UsersInfo___BV_modal_body_"]/form/div[1]/div[5]/div[2]/div/div[3]/ul/li[3]').click()
-
-        Commission_Group1 = browser.find_element(By.XPATH,'//*[@id="modal-UsersInfo___BV_modal_body_"]/form/div[1]/div[6]/div[2]/div/div[1]').click()
-
-        Commission_Group2 = browser.find_element(By.XPATH, '//*[@id="modal-UsersInfo___BV_modal_body_"]/form/div[1]/div[6]/div[2]/div/div[3]/ul/li[6]').click()
-        # time.sleep(2)
-        Bank1 = browser.find_element(By.XPATH,'/html/body/div[2]/div[1]/div/div/div/form/div[1]/div[7]/div[2]/div/button[2]').click()
-        Bank2 = browser.find_element(By.XPATH,'/html/body/div[2]/div[1]/div/div/div/form/div[1]/div[7]/div[2]/div/ul')
-        all_option = Bank2.find_elements_by_tag_name("li")
-        random.choice(all_option).click()
-
-        Account_name = browser.find_element(By.XPATH,'//*[@id="modal-UsersInfo___BV_modal_body_"]/form/div[1]/div[8]/div[2]/input')
-        Account_name.send_keys('test the system')
-
-        Account_number = browser.find_element(By.XPATH,'//*[@id="modal-UsersInfo___BV_modal_body_"]/form/div[1]/div[9]/div[2]/input')
-        Account_number.send_keys('1900000000')
-
-        Password = browser.find_element(By.XPATH,'//*[@id="modal-UsersInfo___BV_modal_body_"]/form/div[1]/div[10]/div[2]/input')
-        Password.send_keys('password01')
-
-        Remark = browser.find_element(By.XPATH,'//*[@id="modal-UsersInfo___BV_modal_body_"]/form/div[1]/div[11]/div[2]/div/textarea')
-        Remark.send_keys('test the system')
-
-        time.sleep(3000)
-
-        Save = browser.find_element(By.XPATH, '//*[@id="modal-UsersInfo___BV_modal_body_"]/form/div[2]/button[1]').click()
+        Edit_user = browser.find_element(By.XPATH, '/html/body/div/div/div/div/div[2]/div/div/div/div[3]/div/div[3]/div/table/tbody/tr/td[10]/div/button')
+        browser.execute_script("arguments[0].click();", Edit_user)
 
         time.sleep(2)
+
+        print('[{}] Create Deposit !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        Deposit = browser.find_element(By.XPATH, '/html/body/div/div/div/div/div[2]/div/div/div/div[3]/div/div[3]/div/table/tbody/tr/td[10]/div/ul/li[6]')
+        Deposit.click()
+
+        time.sleep(1)
+
+        Amount1 = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/div/div[2]/div[1]/form/div[1]/div/div[2]/input')
+        Amount1.send_keys(Keys.CONTROL + 'a')
+
+        Amount2 = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/div/div[2]/div[1]/form/div[1]/div/div[2]/input')
+        Amount2.send_keys(100)
+
+        Edit_bank1 = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/div/div[2]/div[1]/form/div[1]/div/div[5]/div/button/div').click()
+        Edit_bank2 = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/div/div[2]/div[1]/form/div[1]/div/div[5]/div/ul')
+        all_option = Edit_bank2.find_elements_by_tag_name("li")
+        random.choice(all_option).click()
+
+        Date = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/div/div[2]/div[1]/form/div[1]/div/div[7]/input')
+        browser.execute_script("arguments[0].removeAttribute('readonly')", Date)
+        Date.send_keys('{}'.format(datetime.datetime.now().strftime("%Y-%m-%d")))
+
+        time.sleep(2)
+
+        Time = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/div/div[2]/div[1]/form/div[1]/div/div[9]/input')
+        browser.execute_script("arguments[0].removeAttribute('readonly')", Time)
+        Time.send_keys('{}'.format(datetime.datetime.now().strftime("%H:%M %p")))
+
+        time.sleep(100)
+
+        Remark_Deposit = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/div/div[2]/div[1]/form/div[2]/button[1]')
+        Remark_Deposit.send_keys('ทดสอบฝากไม่มีโปรโมชั่น')
+
+        Save_Deposit = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/div/div[2]/div[1]/form/div[2]/button[1]')
+        Save_Deposit.click()
 
         try:
 
-            Ok = browser.find_element(By.XPATH, '/html/body/div[2]/div/div[6]/button[1]')
-            Ok.click()
+            time.sleep(1)
 
-            print('[{}] create user successful!'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+            Close = browser.find_element(By.XPATH, '/html/body/div[2]/div/div[6]/button[1]')
+            browser.execute_script("arguments[0].click();", Close)
+
+            time.sleep(2)
+
+            print('[{}] Create Deposit successful !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
         except:
-            print('[{}] create user false !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+            print('[{}] Create Deposit false !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        time.sleep(100000)
+
+        Cash_System = browser.find_element(By.XPATH, '/html/body/div/div/div/div/div[1]/div[2]/div[1]/div[2]/div/div/div/div/ul/li[3]/a')
+        browser.execute_script("arguments[0].click();", Cash_System)
 
         time.sleep(2)
 
-        Search = browser.find_element(By.XPATH, '//*[@id="filter-input"]')
-        Search.send_keys('0000000090')
-        Search.submit()
+        print('[{}] Click Menu Deposit !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
-        print("[{}] Search !".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+        Deposit = browser.find_element(By.XPATH, '/html/body/div/div/div/div/div[1]/div[2]/div[1]/div[2]/div/div/div/div/ul/li[3]/ul/li[1]/a')
+        browser.execute_script("arguments[0].click();", Deposit)
+
+        Search = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[3]/div/div/div/form/div[2]/div/div[2]/input')
+        Search.send_keys('1013000000')
+
+        Search = browser.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/div[2]/div/div/div/div[3]/div/div/div/form/div[3]/div/div[2]/button[1]')
+        Search.click()
+
+        time.sleep(2)
+
+        Approve = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[4]/div/div[2]/div/table/tbody/tr[1]/td[10]/ul/li/a[2]')
+        Approve.click()
+
+        Approve2 = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div/div[1]/div/div[1]/div/button')
+        Approve2.click()
+
+        Date = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div/div[1]/div/div/div/div[2]/div[2]/input')
+        browser.execute_script("arguments[0].removeAttribute('readonly')", Date)
+        Date.send_keys('{}'.format(datetime.datetime.now().strftime("%Y-%m-%d")))
+
+        Time = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div/div[1]/div/div/div/div[3]/div[2]/input')
+        browser.execute_script("arguments[0].removeAttribute('readonly')", Time)
+        Time.send_keys('{}'.format(datetime.datetime.now().strftime("%H:%M %p")))
+
+        time.sleep(2)
+
+        Note = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div/div[1]/div/div/div/div[4]/div[2]/input')
+        Note.send_keys('บอททดสอบสร้างรายการฝาก')
+
+        Save = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div/div[2]/button[1]')
+        Save.click()
+
+        try:
+
+            time.sleep(1)
+
+            Close = browser.find_element(By.XPATH, '/html/body/div[3]/div/div[3]/button[1]')
+            browser.execute_script("arguments[0].click();", Close)
+
+            time.sleep(2)
+
+            print('[{}] Approve Deposit Bill Number successful !'.format(
+                datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        except:
+            print('[{}] Approve Deposit Bill Number false !'.format(
+                datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        A_2 = 100
+        print('[{}] Approve Deposit Bill Number 100฿ !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        browser.get('https://zabtech.xyz/')
+
+        time.sleep(3)
+
+        login = browser.find_element(By.XPATH, '/html/body/div/div/div/div[1]/div[1]/div/div/div[2]/div/button[1]').click()
+
+        print('[{}] login password !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        username = browser.find_element(By.ID, 'login-phone')
+        username.send_keys('1013000000')
+
+        password = browser.find_element(By.ID, 'login-password')
+        password.send_keys('password005')
+
+        try:
+
+            password.submit()
+
+            time.sleep(3)
+
+            profile1 = browser.find_element(By.XPATH, '/html/body/div/div/div/div[1]/div[1]/div/div/div[2]/div/div/div[2]/div[7]/button').click()
+
+            print('[{}] login user successful !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        except:
+
+            print('[{}] login user false !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        time.sleep(3)
+
+        print('[{}] User create deposit !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        deposit = browser.find_element(By.XPATH, '/html/body/div/div/div/div[1]/div[1]/div[1]/div/div[2]/div/div/div[2]/div[2]/button/span').click()
+
+        time.sleep(3)
+
+        NoPro = browser.find_element(By.XPATH, '/html/body/div/div/div/div[1]/div[3]/div/div/div[3]/button[2]').click()
+
+        try:
+
+            time.sleep(3)
+
+            money = browser.find_element(By.ID, 'deposit-amount')
+            money.send_keys('100')
+            money.submit()
+
+            time.sleep(5)
+
+            print('[{}] User create deposit successful !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        except:
+            print('[{}] User create deposit false !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        browser.get('https://s-u-p.zabtech.xyz/')
+
+        time.sleep(3)
+
+        Cash_System = browser.find_element(By.XPATH, '/html/body/div/div/div/div/div[1]/div[2]/div[1]/div[2]/div/div/div/div/ul/li[3]/a')
+        browser.execute_script("arguments[0].click();", Cash_System)
+
+        time.sleep(2)
+
+        print('[{}] Click Menu Deposit !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        Deposit = browser.find_element(By.XPATH, '/html/body/div/div/div/div/div[1]/div[2]/div[1]/div[2]/div/div/div/div/ul/li[3]/ul/li[1]/a')
+        browser.execute_script("arguments[0].click();", Deposit)
+
+        Search = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[3]/div/div/div/form/div[2]/div/div[2]/input')
+        Search.send_keys('1013000000')
+
+        Search = browser.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/div[2]/div/div/div/div[3]/div/div/div/form/div[3]/div/div[2]/button[1]')
+        Search.click()
+
+        time.sleep(2)
+
+        Approve = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[4]/div/div[2]/div/table/tbody/tr[1]/td[10]/ul/li/a[2]')
+        Approve.click()
+
+        Save = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div/div[2]/button[1]')
+        Save.click()
+
+        try:
+
+            time.sleep(1)
+
+            Close = browser.find_element(By.XPATH, '/html/body/div[3]/div/div[3]/button[1]')
+            browser.execute_script("arguments[0].click();", Close)
+
+            time.sleep(2)
+
+            print('[{}] Approve Deposit Upload Slip successful !'.format(
+                datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        except:
+            print('[{}] Approve Deposit Upload Slip false !'.format(
+                datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        A_3 = 100
+        print('[{}] Approve Deposit Upload Slip 100฿ !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
         time.sleep(1)
 
-        Edit_user = browser.find_element(By.XPATH, '/html/body/div/div/div/div/div[2]/div/div/div/div[3]/div/div[3]/div/table/tbody/tr[1]/td[10]/ul/li[1]/a')
+        Edit_user = browser.find_element(By.XPATH, '/html/body/div/div/div/div/div[2]/div/div/div/div[3]/div/div[3]/div/table/tbody/tr/td[10]/div/button')
         browser.execute_script("arguments[0].click();", Edit_user)
 
+        time.sleep(2)
+
+        print('[{}] Create Deposit !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        Deposit = browser.find_element(By.XPATH, '/html/body/div/div/div/div/div[2]/div/div/div/div[3]/div/div[3]/div/table/tbody/tr/td[10]/div/ul/li[6]')
+        Deposit.click()
+
         time.sleep(1)
 
-        First_name_clear = browser.find_element(By.XPATH,'//*[@id="modal-UsersInfo___BV_modal_body_"]/form/div/div[1]/div/div[2]/div/div/input')
-        First_name_clear.clear()
+        Amount1 = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/div/div[2]/div[1]/form/div[1]/div/div[2]/input')
+        Amount1.send_keys(Keys.CONTROL + 'a')
 
-        First_name = browser.find_element(By.XPATH,'//*[@id="modal-UsersInfo___BV_modal_body_"]/form/div/div[1]/div/div[2]/div/div/input')
-        First_name.send_keys('')
+        Amount2 = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/div/div[2]/div[1]/form/div[1]/div/div[2]/input')
+        Amount2.send_keys(20)
 
-        Last_name_clear = browser.find_element(By.XPATH,'//*[@id="modal-UsersInfo___BV_modal_body_"]/form/div/div[1]/div/div[3]/div/div/input')
-        Last_name_clear.clear()
-
-        Last_name = browser.find_element(By.XPATH,'//*[@id="modal-UsersInfo___BV_modal_body_"]/form/div/div[1]/div/div[3]/div/div/input')
-        Last_name.send_keys('มาสาย')
-
-        User_group = browser.find_element(By.XPATH,'//*[@id="modal-UsersInfo___BV_modal_body_"]/form/div/div[1]/div/div[4]/div/div/select')
-        all_option = User_group.find_elements_by_tag_name("option")
+        Edit_bank1 = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/div/div[2]/div[1]/form/div[1]/div/div[5]/div/button/div').click()
+        Edit_bank2 = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/div/div[2]/div[1]/form/div[1]/div/div[5]/div/ul')
+        all_option = Edit_bank2.find_elements_by_tag_name("li")
         random.choice(all_option).click()
 
-        Password = browser.find_element(By.XPATH,'//*[@id="modal-UsersInfo___BV_modal_body_"]/form/div/div[1]/div/div[5]/div/div/input')
-        Password.send_keys('pp100200')
-        Password.send_keys(Keys.ENTER)
+        Date = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/div/div[2]/div[1]/form/div[1]/div/div[7]/input')
+        browser.execute_script("arguments[0].removeAttribute('readonly')", Date)
+        Date.send_keys('{}'.format(datetime.datetime.now().strftime("%Y-%m-%d")))
+
+        Time = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/div/div[2]/div[1]/form/div[1]/div/div[9]/input')
+        browser.execute_script("arguments[0].removeAttribute('readonly')", Time)
+        Time.send_keys('{}'.format(datetime.datetime.now().strftime("%H:%M %p")))
 
         time.sleep(1)
 
-        Close = browser.find_element(By.XPATH, '/html/body/div[2]/div/div[6]/button[1]')
-        Close.send_keys(Keys.ENTER)
-
-        print("[{}] Edit user !".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
-
-        time.sleep(1)
-
-        Edit_bank = browser.find_element(By.XPATH,'//*[@id="__BVID__122"]/tbody/tr/td[4]/ul/li[2]/a/i')
-        browser.execute_script("arguments[0].click();", Edit_bank)
-
-        Bank = browser.find_element(By.XPATH,'//*[@id="modal-UserBank___BV_modal_body_"]/form/div/div[1]/div/div[1]/div/div/select')
-        Bank.find_element_by_xpath("//option[@value='3']").click()
-
-        Account_name_clear = browser.find_element(By.XPATH,'//*[@id="modal-UserBank___BV_modal_body_"]/form/div/div[1]/div/div[2]/div/div/input')
-        Account_name_clear.clear()
-
-        Account_name = browser.find_element(By.XPATH,'//*[@id="modal-UserBank___BV_modal_body_"]/form/div/div[1]/div/div[2]/div/div/input')
-        Account_name.send_keys('นารา มาสาย')
-
-        Account_number_clear = browser.find_element(By.XPATH,'//*[@id="modal-UserBank___BV_modal_body_"]/form/div/div[1]/div/div[3]/div/div/input')
-        Account_number_clear.clear()
-
-        Account_number = browser.find_element(By.XPATH,'//*[@id="modal-UserBank___BV_modal_body_"]/form/div/div[1]/div/div[3]/div/div/input')
-        Account_number.send_keys('1234567890')
-        Account_number.send_keys(Keys.ENTER)
+        Promotion1 = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/div/div[2]/div[1]/form/div[1]/div/div[11]/div/div[2]').click()
+        Promotion2 = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/div/div[2]/div[1]/form/div[1]/div/div[11]/div/div[3]/ul/li[2]').click()
+        print('[{}] promotion ฝากน้อย ได้เยอะ !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
         time.sleep(1)
 
-        Close = browser.find_element(By.XPATH, '/html/body/div[2]/div/div[6]/button[1]')
-        browser.execute_script("arguments[0].click();", Close)
-
-        print("[{}] Edit bank !".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+        Remark_Deposit = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/div/div[2]/div[1]/form/div[2]/button[1]')
+        Remark_Deposit.send_keys('ทดสอบฝากไม่มีโปรโมชั่น')
 
         time.sleep(1)
 
-        Status_ban = browser.find_element(By.XPATH, '//*[@id="__BVID__122"]/tbody/tr/td[4]/ul/li[3]/a/i')
-        browser.execute_script("arguments[0].click();", Status_ban)
+        Save_Deposit = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/div/div[2]/div[1]/form/div[2]/button[1]')
+        Save_Deposit.click()
 
-        time.sleep(1)
+        try:
 
-        Confirm_ban = browser.find_element(By.XPATH, '/html/body/div[2]/div/div[6]/button[1]')
-        browser.execute_script("arguments[0].click();", Confirm_ban)
+            time.sleep(1)
 
-        time.sleep(1)
+            Close = browser.find_element(By.XPATH, '/html/body/div[2]/div/div[6]/button[1]')
+            browser.execute_script("arguments[0].click();", Close)
 
-        Close = browser.find_element(By.XPATH, '/html/body/div[2]/div/div[6]/button[1]')
-        browser.execute_script("arguments[0].click();", Close)
+            time.sleep(2)
 
-        print("[{}] Status ban !".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+            print('[{}] Create Deposit successful !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
-        time.sleep(1)
+        except:
+            print('[{}] Create Deposit false !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
-        Delete_user = browser.find_element(By.XPATH, '//*[@id="__BVID__122"]/tbody/tr/td[4]/ul/li[4]/a/i')
-        browser.execute_script("arguments[0].click();", Delete_user)
+        time.sleep(3)
 
-        Confirm_delete = browser.find_element(By.XPATH, '/html/body/div[2]/div/div[6]/button[1]')
-        Confirm_delete.send_keys(Keys.ENTER)
+        Cash_System = browser.find_element(By.XPATH, '/html/body/div/div/div/div/div[1]/div[2]/div[1]/div[2]/div/div/div/div/ul/li[3]/a')
+        browser.execute_script("arguments[0].click();", Cash_System)
 
-        time.sleep(1)
+        time.sleep(2)
 
-        Close = browser.find_element(By.XPATH, '/html/body/div[2]/div/div[6]/button[1]')
-        Close.send_keys(Keys.ENTER)
+        print('[{}] Click Menu Deposit !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
-        print("[{}] Delete user !".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+        Deposit = browser.find_element(By.XPATH, '/html/body/div/div/div/div/div[1]/div[2]/div[1]/div[2]/div/div/div/div/ul/li[3]/ul/li[1]/a')
+        browser.execute_script("arguments[0].click();", Deposit)
 
-        time.sleep(1)
+        Search = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[3]/div/div/div/form/div[2]/div/div[2]/input')
+        Search.send_keys('1013000000')
 
+        Search = browser.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/div[2]/div/div/div/div[3]/div/div/div/form/div[3]/div/div[2]/button[1]')
+        Search.click()
+
+        time.sleep(2)
+
+        Approve = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[4]/div/div[2]/div/table/tbody/tr[1]/td[10]/ul/li/a[2]')
+        Approve.click()
+
+        Approve2 = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div/div[1]/div/div[1]/div/button')
+        Approve2.click()
+
+        Date = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div/div[1]/div/div/div/div[2]/div[2]/input')
+        browser.execute_script("arguments[0].removeAttribute('readonly')", Date)
+        Date.send_keys('{}'.format(datetime.datetime.now().strftime("%Y-%m-%d")))
+
+        Time = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div/div[1]/div/div/div/div[3]/div[2]/input')
+        browser.execute_script("arguments[0].removeAttribute('readonly')", Time)
+        Time.send_keys('{}'.format(datetime.datetime.now().strftime("%H:%M %p")))
+        print(Time)
+
+        time.sleep(2)
+
+        Note = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div/div[1]/div/div/div/div[4]/div[2]/input')
+        Note.send_keys('บอททดสอบสร้างรายการฝาก')
+
+        Save = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div/div[2]/button[1]')
+        Save.click()
+
+        try:
+            time.sleep(1)
+
+            Close = browser.find_element(By.XPATH, '/html/body/div[3]/div/div[3]/button[1]')
+            browser.execute_script("arguments[0].click();", Close)
+
+            time.sleep(2)
+
+            print('[{}] Approve Deposit Bill Number successful !'.format(
+                datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
         browser.close()
 
         print("[{}] browser close !".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
