@@ -65,7 +65,7 @@ if __name__ == '__main__':
             Deposit = browser.find_element(By.XPATH, '/html/body/div/div/div/div/div[2]/div/div/div/div[2]/div/div[2]/div/table/tbody/tr/td[10]/div/ul/li[6]')
             Deposit.click()
 
-            time.sleep(1)
+            time.sleep(2)
 
             Amount1 = browser.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div/div/div/div[2]/div[1]/form/div[1]/div/div[2]/input')
             Amount1.send_keys(Keys.CONTROL + 'a')
@@ -134,13 +134,15 @@ if __name__ == '__main__':
             User_Promotions = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[1]/div[2]/div[1]/div[2]/div/div/div/div/ul/li[6]/ul/li[3]/a')
             browser.execute_script("arguments[0].click();", User_Promotions)
 
+            time.sleep(1)
+
             print('[{}] Click Menu User Promotions !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
             Search = browser.find_element(By.XPATH, '//*[@id="filter-input"]')
             Search.send_keys(telephone_number)
             Search.submit()
 
-            time.sleep(3)
+            time.sleep(2)
 
             Concel = browser.find_element(By.XPATH, '/html/body/div/div/div/div/div[2]/div/div/div/div[2]/div/div[2]/div/table/tbody/tr/td[9]/div/ul/li[2]')
             Concel.click()
@@ -313,6 +315,9 @@ if __name__ == '__main__':
 
         Note = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[3]/div/div/form/div[2]/div[4]/input')
         Note.send_keys('บอททดสอบสร้างบิลโน๊ต')
+
+        # Upload_Slip = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[3]/div/div/form/div[3]/div[2]/input')
+        # Upload_Slip.send_keys('C:\\Users\\NeneAnime\\Desktop\\Windows 11\\jojo.jpg')
 
         time.sleep(2)
 
