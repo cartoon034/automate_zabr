@@ -1,14 +1,6 @@
 from selenium.webdriver import Chrome
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from random_number import random_number_num_generator
-from random_username.generate import generate_username
-from random_phone import random_phone_num_generator
-from selenium.webdriver.support.select import Select
-from random import randint
 
 import random
 import datetime
@@ -53,8 +45,7 @@ if __name__ == '__main__':
 
         print("[{}] Click Menu Transfer !".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
-        Amount_1 = ('100')
-        Amount_2 = ('200')
+        Amount_1 = 100
 
         def Create_Transfer_Bank_1():
 
@@ -69,11 +60,9 @@ if __name__ == '__main__':
             Amount.send_keys(Amount_1)
 
             Remark = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[3]/div[2]/input')
-            Remark.send_keys('บอทเลือกธนาคารที่ 1 ที่แสดงใน Drop down')
+            Remark.send_keys('บอททำรายการโอนไปถอน 1')
 
             try:
-
-                time.sleep(2)
 
                 Save = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[4]/div/button[1]')
                 Save.click()
@@ -83,7 +72,7 @@ if __name__ == '__main__':
                 Close = browser.find_element(By.XPATH, '/html/body/div[3]/div/div[3]/button[1]')
                 browser.execute_script("arguments[0].click();", Close)
 
-                time.sleep(2)
+                time.sleep(1)
 
                 print('[{}] Create Transfer 1 successful !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
@@ -97,15 +86,15 @@ if __name__ == '__main__':
             Withdrawal_Bank1 = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[1]/div[2]/div/button').click()
             Withdrawal_Bank2 = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[1]/div[2]/div/ul/li[2]').click()
 
+            time.sleep(1)
+
             Amount = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[2]/div[2]/input')
-            Amount.send_keys(Amount_2)
+            Amount.send_keys(Amount_1)
 
             Remark = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[3]/div[2]/input')
-            Remark.send_keys('บอทเลือกธนาคารที่ 2 ที่แสดงใน Drop down')
+            Remark.send_keys('บอททำรายการโอนไปถอน 2')
 
             try:
-
-                time.sleep(2)
 
                 Save = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[4]/div/button[1]')
                 Save.click()
@@ -115,7 +104,7 @@ if __name__ == '__main__':
                 Close = browser.find_element(By.XPATH, '/html/body/div[3]/div/div[3]/button[1]')
                 browser.execute_script("arguments[0].click();", Close)
 
-                time.sleep(2)
+                time.sleep(1)
 
                 print('[{}] Create Transfer 2 successful !'.format(
                     datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
@@ -123,15 +112,141 @@ if __name__ == '__main__':
             except:
                 print('[{}] Create Transfer 2 false !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
+        def Create_Transfer_Bank_Deposit_Saving():
+
+            time.sleep(2)
+
+            Transfer_Saving = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[1]/ul/li[3]').click()
+
+            time.sleep(1)
+
+            Withdrawal_Bank1 = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[3]/form/div/div[1]/div[2]/div/button').click()
+            Withdrawal_Bank2 = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[3]/form/div/div[1]/div[2]/div/ul/li').click()
+
+            Amount = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[3]/form/div/div[2]/div[2]/input')
+            Amount.send_keys(Amount_1)
+
+            Remark = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[3]/form/div/div[3]/div[2]/input')
+            Remark.send_keys('บอททำรายการฝากโอนไปพัก')
+
+            try:
+
+                Save = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[3]/form/div/div[4]/div/button[1]')
+                Save.click()
+
+                time.sleep(2)
+
+                Close = browser.find_element(By.XPATH, '/html/body/div[3]/div/div[3]/button[1]')
+                browser.execute_script("arguments[0].click();", Close)
+
+                time.sleep(1)
+
+                print('[{}] Create Deposit Saving successful !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+            except:
+                print('[{}] Create Deposit Saving false !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        def Create_Transfer_Bank_Saving():
+
+            time.sleep(2)
+
+            Withdrawal_Bank1 = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[3]/form/div/div[1]/div[2]/div/button').click()
+            Withdrawal_Bank2 = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[3]/form/div/div[1]/div[2]/div/ul/li').click()
+
+            time.sleep(1)
+
+            Amount = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[3]/form/div/div[2]/div[2]/input')
+            Amount.send_keys(Amount_1)
+
+            Remark = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[3]/form/div/div[3]/div[2]/input')
+            Remark.send_keys('บอททำรายการถอนโอนไปพัก')
+
+            try:
+
+                Save = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[3]/form/div/div[4]/div/button[1]')
+                Save.click()
+
+                time.sleep(1)
+
+                Close = browser.find_element(By.XPATH, '/html/body/div[3]/div/div[3]/button[1]')
+                browser.execute_script("arguments[0].click();", Close)
+
+                time.sleep(2)
+
+                print('[{}] Create Saving successful !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+            except:
+                print('[{}] Create Saving false !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
         bank_1 = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[1]/div[2]/div[1]/div/div/div')
         browser.execute_script("arguments[0].click();", bank_1)
 
         Create_Transfer_Bank_1()
 
+        Amount_1 = Amount_1 + 100
+
         bank_1 = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[1]/div[2]/div[1]/div/div/div')
         browser.execute_script("arguments[0].click();", bank_1)
 
         Create_Transfer_Bank_2()
+
+        Amount_1 = Amount_1 + 100
+
+        bank_1 = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[1]/div[2]/div[1]/div/div/div')
+        browser.execute_script("arguments[0].click();", bank_1)
+
+        Create_Transfer_Bank_Deposit_Saving()
+
+        Amount_1 = Amount_1 + 100
+
+        bank_2 = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[1]/div[2]/div[2]/div/div/div')
+        browser.execute_script("arguments[0].click();", bank_2)
+
+        Create_Transfer_Bank_1()
+
+        Amount_1 = Amount_1 + 100
+
+        bank_2 = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[1]/div[2]/div[2]/div/div/div')
+        browser.execute_script("arguments[0].click();", bank_2)
+
+        Create_Transfer_Bank_2()
+
+        Amount_1 = Amount_1 + 100
+
+        bank_2 = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[1]/div[2]/div[2]/div/div/div')
+        browser.execute_script("arguments[0].click();", bank_2)
+
+        Create_Transfer_Bank_Deposit_Saving()
+
+        Amount_1 = Amount_1 + 100
+
+        bank_3 = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[2]/div[2]/div[1]/div/div/div')
+        browser.execute_script("arguments[0].click();", bank_3)
+
+        Create_Transfer_Bank_Saving()
+
+        Amount_1 = Amount_1 + 100
+
+        bank_4 = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[2]/div[2]/div[2]/div/div/div')
+        browser.execute_script("arguments[0].click();", bank_4)
+
+        Create_Transfer_Bank_Saving()
+
+        Amount_1 = Amount_1 + 100
+
+        bank_5 = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[3]/div[2]/div/div/div/div')
+        browser.execute_script("arguments[0].click();", bank_5)
+
+        Create_Transfer_Bank_1()
+
+        Amount_1 = Amount_1 + 100
+
+        bank_5 = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[3]/div[2]/div/div/div/div')
+        browser.execute_script("arguments[0].click();", bank_5)
+
+        Create_Transfer_Bank_2()
+
+        Amount_1 = Amount_1 + 100
 
 
         print("[{}] browser close !".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))

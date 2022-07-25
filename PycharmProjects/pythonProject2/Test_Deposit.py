@@ -28,7 +28,7 @@ if __name__ == '__main__':
         password.send_keys('9v~C3V[CEf&HDcY^')
         password.submit()
 
-        telephone_number = ('1013200000')
+        telephone_number = ('0825169264')
         pass_word = ('password005')
 
         print("[{}] Login Web Admin !".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
