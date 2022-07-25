@@ -17,6 +17,8 @@ if __name__ == '__main__':
 
         print("[{}] Process Start !".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
+
+
         browser.get('https://s-u-p.zabtech.xyz/')
 
         time.sleep(1)
