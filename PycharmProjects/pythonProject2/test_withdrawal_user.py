@@ -22,9 +22,9 @@ if __name__ == '__main__':
     passwordadmin    = ('pp100200')
 
     #รหัสผ่านผู้ใช้
-    telephone_number = ('0943725983')
+    telephone_number = ('0825169264')
     pass_word        = ('pp100200')
-    Bank_Account_number = ('')
+    Bank_Account_number = ('8552236441')
 
     #ใส่จำนวนเงิน
     user_keys_money  = 100
@@ -95,6 +95,119 @@ if __name__ == '__main__':
         except:
 
             print('[{}] logout admin false !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+    def login_user():
+
+        time.sleep(1)
+
+        browser.get(web_user)
+
+        time.sleep(3)
+
+        login = browser.find_element(By.XPATH,
+                                     '/html/body/div/div/div/div[1]/div[1]/div/div/div[2]/div/button[1]').click()
+
+        print('[{}] login user !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        username = browser.find_element(By.ID, 'login-phone')
+        username.send_keys(telephone_number)
+
+        password = browser.find_element(By.ID, 'login-password')
+        password.send_keys(pass_word)
+
+        try:
+
+            password.submit()
+
+            time.sleep(3)
+
+            profile1 = browser.find_element(By.XPATH,
+                                            '/html/body/div/div/div/div[1]/div[1]/div/div/div[2]/div/div/div[2]/div[7]/button').click()
+
+            time.sleep(1)
+
+            profile2 = browser.find_element(By.XPATH,
+                                            '/html/body/div/div/div/div[1]/div[1]/div/div/div[2]/div/div/div[2]/div[7]/button').click()
+
+            print('[{}] login user successful !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        except:
+
+            print('[{}] login user false !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+    def logout_user():
+
+        time.sleep(1)
+
+        browser.get(web_user)
+
+        print('[{}] logout user !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        time.sleep(3)
+
+        profile1 = browser.find_element(By.XPATH,
+                                        '/html/body/div/div/div/div[1]/div[1]/div/div/div[2]/div/div/div[2]/div[7]/button').click()
+
+        time.sleep(1)
+
+        logout = browser.find_element(By.XPATH,
+                                      '/html/body/div/div/div/div[1]/div[3]/div/div[2]/div[2]/button[2]/span').click()
+
+        try:
+
+            time.sleep(2)
+
+            click_login = browser.find_element(By.XPATH,
+                                               '/html/body/div/div/div/div[1]/div[1]/div/div/div[2]/div/button[1]').click()
+
+            print('[{}] logout user successful !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        except:
+
+            print('[{}] logout user false !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+    def User_create_withdrawal():
+
+        time.sleep(1)
+
+        browser.get(web_user)
+
+        time.sleep(3)
+
+        print('[{}] User create deposit !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        withdrawal = browser.find_element(By.XPATH,'//*[@id="__layout"]/div/div[1]/div[1]/div/div/div[2]/div/div/div[2]/div[3]/button').click()
+
+        time.sleep(3)
+
+        money = browser.find_element(By.ID, 'withdrawal-amount')
+        money.send_keys(user_keys_money)
+        money.submit()
+
+        money_close = browser.find_element(By.ID, 'btn-login-close')
+        money_close.click()
+
+        try:
+
+            time.sleep(3)
+
+            withdrawal = browser.find_element(By.XPATH,'//*[@id="__layout"]/div/div[1]/div[1]/div/div/div[2]/div/div/div[2]/div[3]/button').click()
+
+            print('[{}] Retry User create deposit  !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+            time.sleep(3)
+
+            money = browser.find_element(By.ID, 'withdrawal-amount')
+            money.send_keys(user_keys_money)
+            money.submit()
+
+            money_close = browser.find_element(By.ID, 'btn-login-close')
+            money_close.click()
+
+            print('[{}] User create deposit successful  !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+        except:
+            print('[{}] User create deposit false !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
     def Create_Withdrawal():
 
@@ -279,35 +392,33 @@ if __name__ == '__main__':
         Withdrawal_popup.click()
 
         print('[{}] Adjust/Expense !'.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
-        Adjust_Expense = browser.find_element(By.XPATH,'/html/body/div[3]/div[1]/div/div/div/form/div[1]/div/div/div[2]/button[2]')
+
+        Adjust_Expense = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[1]/div/div/div[2]/button[2]')
         browser.execute_script("arguments[0].click();", Adjust_Expense)
 
         time.sleep(2)
 
-        Date = browser.find_element(By.XPATH,'/html/body/div[3]/div[1]/div/div/div/form/div[3]/div/div/form/div[1]/div[2]/input')
+        Date = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[3]/div/div/form/div[1]/div[2]/input')
         browser.execute_script("arguments[0].removeAttribute('readonly')", Date)
         Date.send_keys('{}'.format(datetime.datetime.now().strftime("%Y-%m-%d")))
 
-        Time = browser.find_element(By.XPATH,'/html/body/div[3]/div[1]/div/div/div/form/div[3]/div/div/form/div[1]/div[4]/input')
+        Time = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[3]/div/div/form/div[1]/div[4]/input')
         browser.execute_script("arguments[0].removeAttribute('readonly')", Time)
         Time.send_keys('{}'.format(datetime.datetime.now().strftime("%H%M%p")))
         # Time.send_keys('121212')
 
-        Amount = browser.find_element(By.XPATH,'/html/body/div[3]/div[1]/div/div/div/form/div[3]/div/div/form/div[2]/div[2]/input')
+        Amount = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[3]/div/div/form/div[2]/div[2]/input')
         Amount.send_keys(user_keys_money)
 
-        Note = browser.find_element(By.XPATH,'/html/body/div[3]/div[1]/div/div/div/form/div[3]/div/div/form/div[2]/div[4]/input')
+        Note = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[3]/div/div/form/div[2]/div[4]/input')
         Note.send_keys('บอททดสอบสร้างบิลโน๊ต')
 
-        Customer_account_no = browser.find_element(By.XPATH,'/html/body/div[3]/div[1]/div/div/div/form/div[3]/div/div/form/div[3]/div[2]/input')
-        Customer_account_no.send_keys(Bank_Account_number)
-
-        Upload_Slip = browser.find_element(By.XPATH,'/html/body/div[3]/div[1]/div/div/div/form/div[3]/div/div/form/div[3]/div[4]/input')
+        Upload_Slip = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[3]/div/div/form/div[3]/div[2]/input')
         Upload_Slip.send_keys('C:\\Users\\NeneAnime\\Desktop\\Windows 11\\jojo.jpg')
 
         time.sleep(1)
 
-        credits = browser.find_element(By.XPATH,'/html/body/div[3]/div[1]/div/div/div/form/div[3]/div/div/form/div[4]/div/button')
+        credits = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[3]/div/div/form/div[4]/div/button')
         browser.execute_script("arguments[0].click();", credits)
 
         try:
@@ -417,11 +528,10 @@ if __name__ == '__main__':
 
     try:
 
-        login_admin()
+        login_user()
 
-        Adjust_Expense_Withdrawal()
+        User_create_withdrawal()
 
-        Create_Withdrawal()
 
 
 

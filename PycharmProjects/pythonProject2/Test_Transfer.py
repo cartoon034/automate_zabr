@@ -45,26 +45,26 @@ if __name__ == '__main__':
 
         print("[{}] Click Menu Transfer !".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
-        Amount_1 = 100
+        Amount_1 = 1
 
         def Create_Transfer_Bank_1():
 
             time.sleep(2)
 
-            Withdrawal_Bank1 = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[1]/div[2]/div/button').click()
-            Withdrawal_Bank2 = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[1]/div[2]/div/ul/li[1]').click()
+            Withdrawal_Bank1 = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[1]/form/div/div[1]/div[2]/div/button').click()
+            Withdrawal_Bank2 = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[1]/form/div/div[1]/div[2]/div/ul/li[1]').click()
 
             time.sleep(1)
 
-            Amount = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[2]/div[2]/input')
+            Amount = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[1]/form/div/div[2]/div[2]/input')
             Amount.send_keys(Amount_1)
 
-            Remark = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[3]/div[2]/input')
+            Remark = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[1]/form/div/div[3]/div[2]/input')
             Remark.send_keys('บอททำรายการโอนไปถอน 1')
 
             try:
 
-                Save = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[4]/div/button[1]')
+                Save = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[1]/form/div/div[4]/div/button[1]')
                 Save.click()
 
                 time.sleep(2)
@@ -83,20 +83,20 @@ if __name__ == '__main__':
 
             time.sleep(2)
 
-            Withdrawal_Bank1 = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[1]/div[2]/div/button').click()
-            Withdrawal_Bank2 = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[1]/div[2]/div/ul/li[2]').click()
+            Withdrawal_Bank1 = browser.find_element(By.XPATH,'/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[1]/form/div/div[1]/div[2]/div/button').click()
+            Withdrawal_Bank2 = browser.find_element(By.XPATH,'/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[1]/form/div/div[1]/div[2]/div/ul/li[2]').click()
 
             time.sleep(1)
 
-            Amount = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[2]/div[2]/input')
+            Amount = browser.find_element(By.XPATH,'/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[1]/form/div/div[2]/div[2]/input')
             Amount.send_keys(Amount_1)
 
-            Remark = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[3]/div[2]/input')
+            Remark = browser.find_element(By.XPATH,'/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[1]/form/div/div[3]/div[2]/input')
             Remark.send_keys('บอททำรายการโอนไปถอน 2')
 
             try:
 
-                Save = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[4]/div/button[1]')
+                Save = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[1]/form/div/div[4]/div/button[1]')
                 Save.click()
 
                 time.sleep(2)
@@ -116,22 +116,22 @@ if __name__ == '__main__':
 
             time.sleep(2)
 
-            Transfer_Saving = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[1]/ul/li[3]').click()
+            Transfer_Saving = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[1]/ul/li[2]').click()
 
             time.sleep(1)
 
-            Withdrawal_Bank1 = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[3]/form/div/div[1]/div[2]/div/button').click()
-            Withdrawal_Bank2 = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[3]/form/div/div[1]/div[2]/div/ul/li').click()
+            Withdrawal_Bank1 = browser.find_element(By.XPATH,'/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[1]/div[2]/div/button').click()
+            Withdrawal_Bank2 = browser.find_element(By.XPATH,'/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[1]/div[2]/div/ul/li').click()
 
-            Amount = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[3]/form/div/div[2]/div[2]/input')
+            Amount = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[2]/div[2]/input')
             Amount.send_keys(Amount_1)
 
-            Remark = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[3]/form/div/div[3]/div[2]/input')
+            Remark = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[3]/div[2]/input')
             Remark.send_keys('บอททำรายการฝากโอนไปพัก')
 
             try:
 
-                Save = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[3]/form/div/div[4]/div/button[1]')
+                Save = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[4]/div/button[1]')
                 Save.click()
 
                 time.sleep(2)
@@ -150,20 +150,20 @@ if __name__ == '__main__':
 
             time.sleep(2)
 
-            Withdrawal_Bank1 = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[3]/form/div/div[1]/div[2]/div/button').click()
-            Withdrawal_Bank2 = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[3]/form/div/div[1]/div[2]/div/ul/li').click()
+            Withdrawal_Bank1 = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[1]/div[2]/div/button').click()
+            Withdrawal_Bank2 = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[1]/div[2]/div/ul/li').click()
 
             time.sleep(1)
 
-            Amount = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[3]/form/div/div[2]/div[2]/input')
+            Amount = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[2]/div[2]/input')
             Amount.send_keys(Amount_1)
 
-            Remark = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[3]/form/div/div[3]/div[2]/input')
+            Remark = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[3]/div[2]/input')
             Remark.send_keys('บอททำรายการถอนโอนไปพัก')
 
             try:
 
-                Save = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[3]/form/div/div[4]/div/button[1]')
+                Save = browser.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/div/form/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/form/div/div[4]/div/button[1]')
                 Save.click()
 
                 time.sleep(1)
@@ -183,70 +183,70 @@ if __name__ == '__main__':
 
         Create_Transfer_Bank_1()
 
-        Amount_1 = Amount_1 + 100
+        Amount_1 = Amount_1 + 1
 
         bank_1 = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[1]/div[2]/div[1]/div/div/div')
         browser.execute_script("arguments[0].click();", bank_1)
 
         Create_Transfer_Bank_2()
 
-        Amount_1 = Amount_1 + 100
+        Amount_1 = Amount_1 + 1
 
         bank_1 = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[1]/div[2]/div[1]/div/div/div')
         browser.execute_script("arguments[0].click();", bank_1)
 
         Create_Transfer_Bank_Deposit_Saving()
 
-        Amount_1 = Amount_1 + 100
+        Amount_1 = Amount_1 + 1
 
-        bank_2 = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[1]/div[2]/div[2]/div/div/div')
+        bank_2 = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[1]/div[2]/div[3]/div/div/div')
         browser.execute_script("arguments[0].click();", bank_2)
 
         Create_Transfer_Bank_1()
 
-        Amount_1 = Amount_1 + 100
+        Amount_1 = Amount_1 + 1
 
-        bank_2 = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[1]/div[2]/div[2]/div/div/div')
+        bank_2 = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[1]/div[2]/div[3]/div/div/div')
         browser.execute_script("arguments[0].click();", bank_2)
 
         Create_Transfer_Bank_2()
 
-        Amount_1 = Amount_1 + 100
+        Amount_1 = Amount_1 + 1
 
-        bank_2 = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[1]/div[2]/div[2]/div/div/div')
+        bank_2 = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[1]/div[2]/div[3]/div/div/div')
         browser.execute_script("arguments[0].click();", bank_2)
 
         Create_Transfer_Bank_Deposit_Saving()
 
-        Amount_1 = Amount_1 + 100
+        Amount_1 = Amount_1 + 1
 
         bank_3 = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[2]/div[2]/div[1]/div/div/div')
         browser.execute_script("arguments[0].click();", bank_3)
 
         Create_Transfer_Bank_Saving()
 
-        Amount_1 = Amount_1 + 100
+        Amount_1 = Amount_1 + 1
 
         bank_4 = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[2]/div[2]/div[2]/div/div/div')
         browser.execute_script("arguments[0].click();", bank_4)
 
         Create_Transfer_Bank_Saving()
 
-        Amount_1 = Amount_1 + 100
+        Amount_1 = Amount_1 + 1
 
         bank_5 = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[3]/div[2]/div/div/div/div')
         browser.execute_script("arguments[0].click();", bank_5)
 
         Create_Transfer_Bank_1()
 
-        Amount_1 = Amount_1 + 100
+        Amount_1 = Amount_1 + 1
 
         bank_5 = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[2]/div/div/div/div[3]/div[2]/div/div/div/div')
         browser.execute_script("arguments[0].click();", bank_5)
 
         Create_Transfer_Bank_2()
 
-        Amount_1 = Amount_1 + 100
+        Amount_1 = Amount_1 + 1
 
 
         print("[{}] browser close !".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
